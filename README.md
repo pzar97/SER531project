@@ -3,6 +3,9 @@
 Team Members:
 
 Gayathri Sitaraman
+
 Narmada Ravali Namburi
+
 Prashant Singh
+
 Priyanka Zar
