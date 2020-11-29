@@ -9,3 +9,13 @@ Narmada Ravali Namburi
 Prashant Singh
 
 Priyanka Zar
+
+
+Severity Calculator:
+
+Note: Dependencies are listed in pom.xml file, which maven takes care while project gets built.
+
+
+
+
+
