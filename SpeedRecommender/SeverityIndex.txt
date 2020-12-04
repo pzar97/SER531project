@@ -1,0 +1,27 @@
+{Weather
+"Normal":1.116098
+"Rainy":1.1195446
+"Other":0
+"Stormy":1
+"Windy":1
+"Snowy":1.2
+"Foggy":1
+
+{Road_Condition
+"Dry":1.1175042
+"Wet":1.1108545
+"Ice":1.1666666
+"Snow":1.75
+
+{Light
+"Day":1.1090434
+"Night with visibility":1.132593
+"Nigh with low visibility":0
+"Dark":1.1428572
+
+{Road_type
+"Single carriageway":1.1145295
+"Dual carriageway":1.1338028
+"Roundabout":1.1132076
+"One way street":1.1230068
+"Slip road":1
