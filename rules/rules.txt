@@ -1,0 +1,43 @@
+<<<<<<<<<<<<<<<<<<<<<
+Accident data import rule:
+
+Individual:@C*
+Types:@B*
+Facts: has_severity @G*(xsd:integer),
+          has_light_condition @H*,
+numberOf_vehicles_invloved @I*(xsd:integer),
+has_year @L*(xsd:integer),
+urban_rural @K*(xsd:string),
+at_time @J*(xsd:string),
+has_coordinates @D*,
+occured_on @F*,
+weather_during_accident @E*
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Coordinates data import rule:
+
+Individual:@C*
+Types:@B*
+Facts: has_latitude @E*(xsd:double),
+          has_longitude @F*(xsd:double),
+has_name @G*(xsd:string)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Road data import rule:
+
+Individual:@C*
+Types:@B*
+Facts: has_road_condition @E*(xsd:string),
+          has_road_type @F*(xsd:string),
+has_speed_limit @G*(xsd:integer)
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+
+Weather data import rule:
+
+Individual:@C*
+Types:@B*
+Facts: has_weather_condition @E*(xsd:string)
+
