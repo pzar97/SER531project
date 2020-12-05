@@ -487,9 +487,6 @@ public class Recommender
 
         recommendation = sum / (averages.size());
 
-        //percent of deduction driver should do.
-        recommendation = recommendation * 100;
-
         return recommendation;
 }
 
