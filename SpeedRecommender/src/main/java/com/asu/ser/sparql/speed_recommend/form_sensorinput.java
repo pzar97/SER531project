@@ -1,5 +1,15 @@
 package com.asu.ser.sparql.speed_recommend;
 
+/*
+ * 
+ * Author: Priyanka Zar
+ * Date Created: 29th November 2020
+ * 
+ * This was written by the aforementioned author, and can be used for 
+ * grading purposes by Arizona State University. 
+ * Course: SER 531 
+ */
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;

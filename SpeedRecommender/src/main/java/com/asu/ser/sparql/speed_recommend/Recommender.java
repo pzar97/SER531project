@@ -1,15 +1,25 @@
 package com.asu.ser.sparql.speed_recommend;
 
+/*
+ * 
+ * Author: Prashant Singh
+ * Date Created: 29th November 2020
+ * 
+ * This was written by the aforementioned author, and can be used for 
+ * grading purposes by Arizona State University. 
+ * Course: SER 531 
+ */
+
+//Importing the required libraries
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Recommender class
 public class Recommender
 {
-	
-	
-	
+    //Declaring the attribute for Recommender class
     private static Double normalWeather;
     private static Double rainyWeather;
     private static Double stormyWeather;
@@ -38,6 +48,7 @@ public class Recommender
     private static Double darkLight;
     private static Double unknownLight;
     
+    //Takes input from text file where severity indices are stored.
     public Recommender()
     {
     	 String value;
@@ -54,6 +65,7 @@ public class Recommender
     	
     }
 
+    //Following are setter functions for the attributes.
     public static void setnormalWeather(Double normalWeatherValue)
 	{
 		normalWeather = normalWeatherValue;
@@ -151,6 +163,7 @@ public class Recommender
 		unknownLight = unknownLightValue;
     }
     
+    //Following are getter functions for attributes.
     public static Double getnormalWeather()
 	{
 		return normalWeather;
@@ -249,7 +262,7 @@ public class Recommender
     }
 
     
-
+    //Function takes the attribute and corresponding value and set the required attribute using setter function.
     public static void setValues(String attribute, Double val) {
         if (attribute.contains("Normal")) {
             setnormalWeather(val);
@@ -290,6 +303,7 @@ public class Recommender
         }
     }
 
+    //Splits the text file line based on colon (:) and sends it to setValues function.
     public static void splitValues(String severityValue) {
         String[] severe;
         Double severity;
@@ -307,7 +321,12 @@ public class Recommender
 
 
 
+   
     //-------------------------------------------------------------------------------------------------------
+    //Function to check if the serverity values are above threshold and return the
+    //suggested decrement in speed by averaging on the recommended deductions for
+    //each of the attributes.
+
     public double getRecommendation(form_sensorinput fobj)
     {
     	System.out.println("Recommend");
@@ -349,9 +368,12 @@ public class Recommender
         Double unknownLight = recommend.getunknownLight();
 
         double recommendation = 0.0;
+        //Decided by averaging upon values.
         double threshold = 1.1;
         double sum = 0.0;
         ArrayList<Double> averages = new ArrayList<Double>();
+
+        //The recommended deductions vary based upon attribute and are decided by following guidelines issued by government.
 
         if (normalWeather > threshold)
         {
@@ -359,19 +381,19 @@ public class Recommender
         }
         else if (rainyWeather > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.33);
         }
         else if (stormyWeather > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.40);
         }
         else if (snowyWeather > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.50);
         }
         else if (foggyWeather > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.40);
         }
         else if (windyWeather > threshold)
         {
@@ -384,7 +406,7 @@ public class Recommender
 
         else if (singleType > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.10);
         }
         else if (dualType > threshold)
         {
@@ -392,15 +414,15 @@ public class Recommender
         }
         else if (oneType > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.10);
         }
         else if (roundType > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.33);
         }
         else if (slipType > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.40);
         }
         else if (unknownType > threshold)
         {
@@ -409,7 +431,7 @@ public class Recommender
 
         else if (wetSurface > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.33);
         }
         else if (drySurface > threshold)
         {
@@ -417,15 +439,15 @@ public class Recommender
         }
         else if (iceSurface > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.60);
         }
         else if (snowSurface > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.50);
         }
         else if (floodSurface > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.50);
         }
         else if (unknownSurface > threshold)
         {
@@ -438,15 +460,15 @@ public class Recommender
         }
         else if (darkLight > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.40);
         }
         else if (nightInvisibleLight > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.50);
         }
         else if (nightVisibleLight > threshold)
         {
-            averages.add(0.25);
+            averages.add(0.40);
         }
         else if (unknownLight > threshold)
         {
@@ -455,7 +477,7 @@ public class Recommender
         
         else if(locSeverity > threshold)
         {
-        	averages.add(0.25);
+        	averages.add(0.30);
         }
 
         for (int i = 0; i < averages.size(); i++)
@@ -467,4 +489,5 @@ public class Recommender
 
         return recommendation;
 }
+
 }
