@@ -1,15 +1,25 @@
 package com.asu.ser.sparql.speed_recommend;
 
+/*
+ * 
+ * Author: Prashant Singh
+ * Date Created: 29th November 2020
+ * 
+ * This was written by the aforementioned author, and can be used for 
+ * grading purposes by Arizona State University. 
+ * Course: SER 531 
+ */
+
+//Importing the required libraries
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Recommender class
 public class Recommender
 {
-	
-	
-	
+    //Declaring the attribute for Recommender class
     private static Double normalWeather;
     private static Double rainyWeather;
     private static Double stormyWeather;
