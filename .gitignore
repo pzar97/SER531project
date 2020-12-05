@@ -17,9 +17,9 @@
 
 hs_err_pid*
 
-/.classpath
-/*.project
-/.settings
+SpeedRecommender/.classpath
+SpeedRecommender/.project
+SpeedRecommender/.settings
 
 #For Python projects
 # Byte-compiled / optimized / DLL files
